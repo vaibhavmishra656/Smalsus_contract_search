@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "anshu-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/anshuWebPart/AnshuWebPartWebPart.js",
+          "manifest": "./src/webparts/anshuWebPart/AnshuWebPartWebPart.manifest.json"
+        }
+      ]
+    },
+    "neha-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/nehaWebPart/NehaWebPartWebPart.js",
+          "manifest": "./src/webparts/nehaWebPart/NehaWebPartWebPart.manifest.json"
+        }
+      ]
+    },
+    "vivekanand-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/vivekanandWebPart/VivekanandWebPartWebPart.js",
+          "manifest": "./src/webparts/vivekanandWebPart/VivekanandWebPartWebPart.manifest.json"
+        }
+      ]
+    },
+    "sameer-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/sameerWebPart/SameerWebPartWebPart.js",
+          "manifest": "./src/webparts/sameerWebPart/SameerWebPartWebPart.manifest.json"
+        }
+      ]
+    },
+    "vaibhav-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/vaibhavWebPart/VaibhavWebPartWebPart.js",
+          "manifest": "./src/webparts/vaibhavWebPart/VaibhavWebPartWebPart.manifest.json"
+        }
+      ]
+    },
+    "abhishek-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/abhishekWebPart/AbhishekWebPartWebPart.js",
+          "manifest": "./src/webparts/abhishekWebPart/AbhishekWebPartWebPart.manifest.json"
+        }
+      ]
+    },
+    "ajay-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/ajayWebPart/AjayWebPartWebPart.js",
+          "manifest": "./src/webparts/ajayWebPart/AjayWebPartWebPart.manifest.json"
+        }
+      ]
+    },
+    "padam-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/padamWebPart/PadamWebPartWebPart.js",
+          "manifest": "./src/webparts/padamWebPart/PadamWebPartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AnshuWebPartWebPartStrings": "lib/webparts/anshuWebPart/loc/{locale}.js",
+    "NehaWebPartWebPartStrings": "lib/webparts/nehaWebPart/loc/{locale}.js",
+    "VivekanandWebPartWebPartStrings": "lib/webparts/vivekanandWebPart/loc/{locale}.js",
+    "SameerWebPartWebPartStrings": "lib/webparts/sameerWebPart/loc/{locale}.js",
+    "VaibhavWebPartWebPartStrings": "lib/webparts/vaibhavWebPart/loc/{locale}.js",
+    "AbhishekWebPartWebPartStrings": "lib/webparts/abhishekWebPart/loc/{locale}.js",
+    "AjayWebPartWebPartStrings": "lib/webparts/ajayWebPart/loc/{locale}.js",
+    "PadamWebPartWebPartStrings": "lib/webparts/padamWebPart/loc/{locale}.js"
+  }
+}
