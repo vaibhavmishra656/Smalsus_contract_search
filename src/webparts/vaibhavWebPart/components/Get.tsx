@@ -11,7 +11,7 @@ const [state, setState] = React.useState([])
 
         const varAllTaskusers = []
 
-        axios.get("https://hhhhteams.sharepoint.com/sites/HHHH/Gmbh/_api/web/lists/getbyid('aebcb136-f18d-4beb-bb86-1194a7cf485d')/items?$select=Id,UserGroupId,Suffix,Title,Email,SortOrder,Role,IsShowTeamLeader,Company,ParentID1,Status,Item_x0020_Cover,AssingedToUserId,isDeleted,AssingedToUser/Title,AssingedToUser/Id,AssingedToUser/EMail,ItemType&$expand=AssingedToUser&$orderby=SortOrder asc,Title asc")
+        axios.get("https://smalsusinfolabs.sharepoint.com/sites/Dashboard/Prashant/Vaibhav/_api/web/lists/getbyid('653EAEB8-CA8F-406B-9764-96638124C1EE')/items?$select=Id,LastName,FirstName")
 
             .then(function(response: AxiosResponse) {
 
@@ -28,11 +28,30 @@ const [state, setState] = React.useState([])
                 });
 
     };
+
+    React.useEffect(()=> {
+
+        constloadGmBHTaskUsers();
+        
+
+
+
+
+
+    },[]);
     return(
         <div>
            <h1>My Goal</h1>
+           {state.map(item=>{
+            return(
+            <>
+            <h1>{item.Id}</h1>
+            <h1>{item.FirstName}</h1>
+            <h1>{item.LastName}</h1>
+            </>
+           )})}
 
-              
+               
         </div>
     )
 }
