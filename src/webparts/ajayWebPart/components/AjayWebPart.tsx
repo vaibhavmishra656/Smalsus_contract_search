@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IAjayWebPartProps } from './IAjayWebPartProps';
+import Table from './Table';
 
 export default class AjayWebPart extends React.Component<IAjayWebPartProps, {}> {
   public render(): React.ReactElement<IAjayWebPartProps> {
@@ -12,7 +13,9 @@ export default class AjayWebPart extends React.Component<IAjayWebPartProps, {}> 
     } = this.props;
 
     return (
-      <div>Testing my webpart</div>
+      <div>
+        <Table/>
+      </div>
     );
   }
 }

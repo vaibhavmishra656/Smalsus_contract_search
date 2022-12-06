@@ -3,4 +3,9 @@
   "port": 4321,
   "https": true,
   "initialPage": "https://smalsusinfolabs.sharepoint.com/_layouts/workbench.aspx"
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> db0729448121c6803c7f4df2028fcadee93d07d0
