@@ -41,14 +41,24 @@ const [state, setState] = React.useState([])
     },[]);
     return(
         <div>
-           <h1>My Goal</h1>
+            <tr>
+                <th> <h1>Id</h1></th>
+                <th><h1>FirstName</h1></th>
+                <th><h1>LastName</h1></th>
+                </tr>
            {state.map(item=>{
             return(
             <>
-            <h1>{item.Id}</h1>
-            <h1>{item.FirstName}</h1>
-            <h1>{item.LastName}</h1>
+            <table>
+                                <tr>
+                <td> <h1>{item.Id}</h1></td>
+                <td><h1>{item.FirstName}</h1></td>
+                <td><h1>{item.LastName}</h1></td>
+                </tr>
+                
+            </table>
             </>
+            
            )})}
 
                
