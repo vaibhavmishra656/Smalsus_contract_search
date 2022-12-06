@@ -41,25 +41,27 @@ const [state, setState] = React.useState([])
     },[]);
     return(
         <div>
-            <tr>
+           
+           
+            <>
+            <table style={{border: "1px solid"}}>
+            <tr style={{border: "1px solid"}}>
                 <th> <h1>Id</h1></th>
                 <th><h1>FirstName</h1></th>
                 <th><h1>LastName</h1></th>
                 </tr>
-           {state.map(item=>{
+            {state.map(item=>{
             return(
-            <>
-            <table>
-                                <tr>
+                <tr style={{border: "1px solid"}}>
                 <td> <h1>{item.Id}</h1></td>
                 <td><h1>{item.FirstName}</h1></td>
                 <td><h1>{item.LastName}</h1></td>
                 </tr>
-                
+                ) })}
             </table>
             </>
             
-           )})}
+        
 
                
         </div>
