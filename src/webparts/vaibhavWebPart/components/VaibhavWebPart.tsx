@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { IVaibhavWebPartProps } from './IVaibhavWebPartProps';
 import { escape } from '@microsoft/sp-lodash-subset';
+import Test from './get';
 
 export default class VaibhavWebPart extends React.Component<IVaibhavWebPartProps, {}> {
   public render(): React.ReactElement<IVaibhavWebPartProps> {
@@ -8,12 +9,7 @@ export default class VaibhavWebPart extends React.Component<IVaibhavWebPartProps
 
     return (
     <div>
-      <h1>VVVVVVAAAAAIIII</h1>
-      <section>
-        <h2>
-          JJJJJMMMMAAAAAAMMMMM
-        </h2>
-      </section>
+      <Test/>
     </div>
     );
   }
