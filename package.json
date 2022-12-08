@@ -18,9 +18,15 @@
     "bootstrap": "^5.2.3",
     "office-ui-fabric-react": "7.185.7",
     "react": "16.13.1",
+<<<<<<< HEAD
+    "react-bootstrap": "^2.7.0",
+    "react-dom": "16.13.1",
+    "react-modal": "^3.16.1",
+=======
     "react-bootstrap": "^2.6.0",
     "react-dom": "16.13.1",
     "reactjs-popup": "^2.0.5",
+>>>>>>> 7843a8551f806d8ef49e42f422ef8543ae946def
     "tslib": "2.3.1"
   },
   "devDependencies": {
