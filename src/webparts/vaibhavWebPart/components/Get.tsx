@@ -47,9 +47,8 @@ const handleShow = () => {setShow(true);
     },[]);
     return(
         <div>
-<<<<<<< HEAD
            <h1>My Goal</h1>     
-=======
+
            <Example />
            
             <>
@@ -78,7 +77,6 @@ const handleShow = () => {setShow(true);
          */}
 
                
->>>>>>> 7843a8551f806d8ef49e42f422ef8543ae946def
         </div>
     )
 }
