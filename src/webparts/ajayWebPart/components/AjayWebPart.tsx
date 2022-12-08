@@ -1,6 +1,6 @@
 import * as React from 'react';
+import GetTable from './GetTable';
 import { IAjayWebPartProps } from './IAjayWebPartProps';
-import Table from './Table';
 
 export default class AjayWebPart extends React.Component<IAjayWebPartProps, {}> {
   public render(): React.ReactElement<IAjayWebPartProps> {
@@ -14,7 +14,7 @@ export default class AjayWebPart extends React.Component<IAjayWebPartProps, {}> 
 
     return (
       <div>
-        <Table/>
+        <GetTable></GetTable>
       </div>
     );
   }

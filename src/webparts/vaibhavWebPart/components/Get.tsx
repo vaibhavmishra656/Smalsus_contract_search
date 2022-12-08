@@ -30,9 +30,7 @@ const [state, setState] = React.useState([])
     };
     return(
         <div>
-           <h1>My Goal</h1>
-
-              
+           <h1>My Goal</h1>     
         </div>
     )
 }
