@@ -11,7 +11,7 @@ export default function ModalPopup(props:dataType) {
     console.log(props.items);
   return (
     <div>
-        {props.state ? <h1>d</h1> : null}
+        {props.state ? <h1>Popup Open</h1> : null}
     </div>
   )
 }
