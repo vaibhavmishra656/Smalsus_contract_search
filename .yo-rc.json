@@ -1,14 +1,19 @@
 {
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
-    "isCreatingSolution": false,
-    "version": "1.15.2",
-    "libraryName": "trainees-project",
-    "libraryId": "bf3e66d6-447b-4391-b649-a4221894e299",
+    "isCreatingSolution": true,
+    "nodeVersion": "14.19.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.0",
+    "libraryName": "contract-search",
+    "libraryId": "590530a6-0067-47df-abd5-a5ec47efaea3",
     "environment": "spo",
     "packageManager": "npm",
-    "solutionName": "trainees-project",
-    "solutionShortDescription": "trainees-project description",
+    "solutionName": "Contract Search",
+    "solutionShortDescription": "Contract Search description",
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "webpart"
