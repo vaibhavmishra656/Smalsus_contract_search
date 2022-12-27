@@ -31710,7 +31710,7 @@ function validateModifiers(modifiers) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "JPst")(false);
 // Module
-exports.push([module.i, ".contact-section{box-sizing:border-box}.contact-heading,.contact-section,.cotact-container{width:100%;height:100%}.contact-heading{display:flex;color:#111168}.userImg{width:40px;border-radius:50px;margin-right:5px;border:none}.popup-section{width:100%;height:100%}.popup-container{position:absolute;top:25%;left:50%;width:1200px;transform:translate(-50%,-50%);border-radius:5px;padding:5%;justify-content:center;backdrop-filter:blur(10px)}.popup-container-country,.popup-container-org{position:absolute;top:22%;left:50%;width:1200px;height:100vh;transform:translate(-50%,-50%);border-radius:5px;padding:10%;justify-content:center}shareweb-breadcrumb-item .Breadcrumb{display:none}.popup-header{width:100%}.links-and-buttons button{border:none;outline:none}.CanvasComponent.LCS .CanvasZone,.f_a_8474018e{width:1400px!important}.row>*{max-width:1400px!important}.e_a_8474018{padding:0 0!important}.badge{background-color:#006}.tr{border-color:#000!important}.component-section .main-search{border-radius:25px 0 0 25px;padding:3px 10px;outline:none}.search-button{padding:4px 15px;border-radius:0 25px 25px 0;border:1px solid #000;background-color:#006;color:#fff;font-weight:400}.table-buttons .function-btns{background:#006;font-weight:500;color:#fff;border:none;margin:5px;padding:5px 10px;border-radius:3px}.full-name{color:#006;font-size:15px;font-weight:600}.edit-btn{border:none;outline:none;font-size:25px;background:none;color:#006}.search-input{border-radius:5px;padding:3px 10px}.contact-navigation button{background-color:#fff;color:#006;font-weight:600;padding:5px 50px;font-size:18px}.contact-navigation .contact-nav-button-active,.contact-navigation .institute-nav-button-active{background-color:#006;color:#fff;font-size:500;transition:all .1s ease-in-out}.t_e_8474018e{max-width:1845px!important}.CanvasComponent.LCS .CanvasZone,.f_a_8474018e{width:1850px!important}", ""]);
+exports.push([module.i, ".contact-section{box-sizing:border-box}.contact-heading,.contact-section,.cotact-container{width:100%;height:100%}.contact-heading{display:flex;color:#111168}.userImg{width:40px;border-radius:50px;margin-right:5px;border:none}.popup-section{width:100%;height:100%}.popup-container{position:absolute;top:25%;left:50%;width:1200px;transform:translate(-50%,-50%);border-radius:5px;padding:5%;justify-content:center;backdrop-filter:blur(10px)}.popup-container-country,.popup-container-org{position:absolute;top:22%;left:50%;width:1200px;height:100vh;transform:translate(-50%,-50%);border-radius:5px;padding:10%;justify-content:center}shareweb-breadcrumb-item .Breadcrumb{display:none}.popup-header{width:100%}.links-and-buttons button{border:none;outline:none}.CanvasComponent.LCS .CanvasZone,.f_a_8474018e{width:1400px!important}.row>*{max-width:1400px!important}.e_a_8474018{padding:0 0!important}.badge{background-color:#006}.tr{border-color:#000!important}.component-section .main-search{border-radius:25px 0 0 25px;padding:3px 10px;outline:none}.search-button{padding:4px 15px;border-radius:0 25px 25px 0;border:1px solid #000;background-color:#006;color:#fff;font-weight:400}.table-buttons .function-btns{background:#006;font-weight:500;color:#fff;border:none;margin:5px;padding:5px 10px;border-radius:3px}.full-name{color:#006;font-size:15px;font-weight:600}.edit-btn{border:none;outline:none;font-size:25px;background:none;color:#006}.search-input{border-radius:5px;padding:3px 10px}.contact-navigation button{background-color:#fff;color:#006;font-weight:600;padding:5px 50px;font-size:18px}.contact-navigation .contact-nav-button-active,.contact-navigation .institute-nav-button-active{background-color:#006;color:#fff;font-size:500;transition:all .1s ease-in-out}.t_e_8474018e{max-width:1845px!important}.CanvasComponent.LCS .CanvasZone,.f_a_8474018e{width:1850px!important}span.toltrippopup{top:34%;right:35%}span.toltrippopup,span.toltrippopup-2{position:absolute;width:36px;height:37px;line-height:29px;text-align:center;background:#006}span.toltrippopup-2{top:41%;right:2%}", ""]);
 
 
 /***/ }),
@@ -37414,10 +37414,11 @@ var CreateContract = function (prop) {
             }
         });
     }); };
-    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
+    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "modal show", style: { display: 'block', position: 'initial' } },
         react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], { show: show, onHide: handleClose, size: "lg", "aria-labelledby": "contained-modal-title-vcenter" },
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Header, { closeButton: true },
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Title, null, "Create Contract")),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Header, null,
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Title, null, "Create Contract"),
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", { onClick: handleClose }, "x")),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Body, null,
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Form"], null,
                     react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Row"], { className: "mb-3" },
@@ -37426,12 +37427,17 @@ var CreateContract = function (prop) {
                             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", { type: "text", className: "form-control", "aria-label": "Small", "aria-describedby": "inputGroup-sizing-sm", onChange: function (e) { return setTitlecontract(e.target.value); } })),
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Form"].Group, { as: react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Col"], controlId: "formGridCity" },
                             react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Form"].Label, null, "Employee Name"),
-                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", { type: "text", className: "form-control", "aria-label": "Small", "aria-describedby": "inputGroup-sizing-sm", value: ContactDetailsItem }),
-                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], { type: "button", className: "btn btn-primary btn-sm", onClick: openEmployeeDetailspopup }, "Search")),
+                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
+                                " ",
+                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", { type: "text", className: "form-control", "aria-label": "Small", "aria-describedby": "inputGroup-sizing-sm", value: ContactDetailsItem }),
+                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", { className: "toltrippopup" },
+                                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { onClick: openEmployeeDetailspopup, src: "https://hhhhteams.sharepoint.com/sites/HHHH/SiteCollectionImages/ICONS/Foundation/EMMCopyTerm.png", "data-themekey": "#" })))),
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Form"].Group, { as: react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Col"], controlId: "formGridCity" },
                             react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Form"].Label, null, "Contract Type"),
-                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", { type: "text", className: "form-control", "aria-label": "Small", "aria-describedby": "inputGroup-sizing-sm", value: contractTypeItem }),
-                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], { type: "button", className: "btn btn-primary btn-sm", onClick: function () { return openContractTypepopup(contractTypeItem); } }, "Search"))))),
+                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
+                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", { type: "text", className: "form-control", "aria-label": "Small", "aria-describedby": "inputGroup-sizing-sm", value: contractTypeItem }),
+                                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", { className: "toltrippopup-2" },
+                                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { onClick: function () { return openContractTypepopup(contractTypeItem); }, src: "https://hhhhteams.sharepoint.com/sites/HHHH/SiteCollectionImages/ICONS/Foundation/EMMCopyTerm.png", "data-themekey": "#" }))))))),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Footer, null,
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], { variant: "primary", onClick: handleClose }, "Add New Employee"),
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], { variant: "primary", onClick: createnewcontract }, "Create"),
@@ -38421,7 +38427,7 @@ var ContractData = function () {
         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'cotact-container' },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h2", null, "Contracts-Search"),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "card-header d-flex justify-content-between" },
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "card-header d-flex justify-content-between", style: { width: "140%" } },
                     react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", { className: 'mx-2' },
                             "Showing ",

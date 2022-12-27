@@ -225,7 +225,7 @@ const ContractData = () => {
       <div className='cotact-container'>
       <h2>Contracts-Search</h2>
       <div>
-        <div className="card-header d-flex justify-content-between">
+        <div className="card-header d-flex justify-content-between"style={{width:"140%"}}>
          
          <div><span className='mx-2'>Showing <b>{FilterLength} </b> of <b>{AllContactsLength} </b>Contacts</span>
              <input type='text' className="main-search"  value={filterkey.searchAll}  placeholder=" Search All" onChange={(e) => filterData(e, "searchAll")} />
