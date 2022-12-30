@@ -31710,7 +31710,7 @@ function validateModifiers(modifiers) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "JPst")(false);
 // Module
-exports.push([module.i, ".contact-section{box-sizing:border-box}.contact-heading,.contact-section,.cotact-container{width:100%;height:100%}.contact-heading{display:flex;color:#111168}.userImg{width:40px;border-radius:50px;margin-right:5px;border:none}.popup-section{width:100%;height:100%}.popup-container{position:absolute;top:25%;left:50%;width:1200px;transform:translate(-50%,-50%);border-radius:5px;padding:5%;justify-content:center;backdrop-filter:blur(10px)}.popup-container-country,.popup-container-org{position:absolute;top:22%;left:50%;width:1200px;height:100vh;transform:translate(-50%,-50%);border-radius:5px;padding:10%;justify-content:center}shareweb-breadcrumb-item .Breadcrumb{display:none}.popup-header{width:100%}.links-and-buttons button{border:none;outline:none}.CanvasComponent.LCS .CanvasZone,.f_a_8474018e{width:1400px!important}.row>*{max-width:1400px!important}.e_a_8474018{padding:0 0!important}.badge{background-color:#006}.tr{border-color:#000!important}.component-section .main-search{border-radius:25px 0 0 25px;padding:3px 10px;outline:none}.search-button{padding:4px 15px;border-radius:0 25px 25px 0;border:1px solid #000;background-color:#006;color:#fff;font-weight:400}.table-buttons .function-btns{background:#006;font-weight:500;color:#fff;border:none;margin:5px;padding:5px 10px;border-radius:3px}.full-name{color:#006;font-size:15px;font-weight:600}.edit-btn{border:none;outline:none;font-size:25px;background:none;color:#006}.search-input{border-radius:5px;padding:3px 10px}.contact-navigation button{background-color:#fff;color:#006;font-weight:600;padding:5px 50px;font-size:18px}.contact-navigation .contact-nav-button-active,.contact-navigation .institute-nav-button-active{background-color:#006;color:#fff;font-size:500;transition:all .1s ease-in-out}.t_e_8474018e{max-width:1845px!important}.CanvasComponent.LCS .CanvasZone,.f_a_8474018e{width:1850px!important}span.toltrippopup{top:34%;right:35%}span.toltrippopup,span.toltrippopup-2{position:absolute;width:36px;height:37px;line-height:29px;text-align:center;background:#006}span.toltrippopup-2{top:41%;right:2%}", ""]);
+exports.push([module.i, ".contact-section{box-sizing:border-box}.contact-heading,.contact-section,.cotact-container{width:100%;height:100%}.contact-heading{display:flex;color:#111168}.userImg{width:40px;border-radius:50px;margin-right:5px;border:none}.popup-section{width:100%;height:100%}.popup-container{position:absolute;top:25%;left:50%;width:1200px;transform:translate(-50%,-50%);border-radius:5px;padding:5%;justify-content:center;backdrop-filter:blur(10px)}.popup-container-country,.popup-container-org{position:absolute;top:22%;left:50%;width:1200px;height:100vh;transform:translate(-50%,-50%);border-radius:5px;padding:10%;justify-content:center}shareweb-breadcrumb-item .Breadcrumb{display:none}.popup-header{width:100%}.links-and-buttons button{border:none;outline:none}.CanvasComponent.LCS .CanvasZone,.f_a_8474018e{width:1400px!important}.row>*{max-width:1400px!important}.e_a_8474018{padding:0 0!important}.badge{background-color:#006}.tr{border-color:#000!important}.component-section .main-search{border-radius:25px 0 0 25px;padding:3px 10px;outline:none}.search-button{padding:4px 15px;border-radius:0 25px 25px 0;border:1px solid #000;background-color:#006;color:#fff;font-weight:400}.table-buttons .function-btns{background:#006;font-weight:500;color:#fff;border:none;margin:5px;padding:5px 10px;border-radius:3px}.full-name{color:#006;font-size:15px;font-weight:600}.edit-btn{border:none;outline:none;font-size:25px;background:none;color:#006}.search-input{border-radius:5px;padding:3px 10px}.contact-navigation button{background-color:#fff;color:#006;font-weight:600;padding:5px 50px;font-size:18px}.contact-navigation .contact-nav-button-active,.contact-navigation .institute-nav-button-active{background-color:#006;color:#fff;font-size:500;transition:all .1s ease-in-out}.t_e_8474018e{max-width:1845px!important}.CanvasComponent.LCS .CanvasZone,.f_a_8474018e{width:1850px!important}span.toltrippopup{right:35%}span.toltrippopup,span.toltrippopup-2{position:absolute;top:41%;width:36px;height:37px;line-height:29px;text-align:center;background:#006}span.toltrippopup-2{right:2%}", ""]);
 
 
 /***/ }),
@@ -37276,8 +37276,8 @@ var CreateContract = function (prop) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/HR');
-                    return [4 /*yield*/, web.lists.getById('a7b80424-e5e1-47c6-80a1-0ee44a70f92c').items.select("Id,Title,ItemType,FirstName,FullName,Company,JobTitle,Item_x0020_Cover,EmployeeID/Title,StaffID,EmployeeID/Id").expand("EmployeeID").orderBy("Created", true).get()
+                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
+                    return [4 /*yield*/, web.lists.getById('69e59417-fa02-4431-9d7d-100560cf3aff').items.select("Id,Title,ItemType,FirstName,FullName,Company,JobTitle,Item_x0020_Cover,EmployeeID/Title,StaffID,EmployeeID/Id").expand("EmployeeID").orderBy("Created", true).get()
                             .then(function (Data) {
                             console.log(Data);
                             var employecopyData = [];
@@ -37337,8 +37337,8 @@ var CreateContract = function (prop) {
                     console.log("contractType Id:", contractTypeId);
                     console.log("contractType Id:", contractTypeItem);
                     if (!(contractTypeItem != undefined && contractTypeItem != "")) return [3 /*break*/, 2];
-                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/HR');
-                    return [4 /*yield*/, web.lists.getById('986680CE-5D69-47B4-947C-3998DDC3776C').items.select("Id,contractNumber,Title,ContractId,typeOfContract").filter("typeOfContract eq'" + contractTypeItem + "'").orderBy("Created", false).top(1).get()
+                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
+                    return [4 /*yield*/, web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items.select("Id,contractNumber,Title,ContractId,typeOfContract").filter("typeOfContract eq'" + contractTypeItem + "'").orderBy("Created", false).top(1).get()
                             .then(function (Data) {
                             var contractNumberlength;
                             console.log("contract list data ", Data);
@@ -37388,8 +37388,8 @@ var CreateContract = function (prop) {
                     console.log(contractId);
                     console.log(contactDetailsId);
                     if (!(Titlecontract != "" && Titlecontract != undefined && ContactDetailsItem != undefined && ContactDetailsItem != "" && contractTypeItem != "" && contractTypeItem != undefined)) return [3 /*break*/, 4];
-                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]("https://hhhhteams.sharepoint.com/sites/HHHH/HR");
-                    return [4 /*yield*/, web.lists.getById("986680CE-5D69-47B4-947C-3998DDC3776C").items.add({
+                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]("https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus");
+                    return [4 /*yield*/, web.lists.getById("e183a16b-edd1-4962-99ed-f2d36d2a4816").items.add({
                             Title: Titlecontract,
                             //  Type_OfContractID:contractTypeId,
                             typeOfContract: contractTypeItem,
@@ -38244,9 +38244,9 @@ var ContractData = function () {
                 case 0:
                     date = new Date();
                     currentdate = moment__WEBPACK_IMPORTED_MODULE_5__(date).format("DD/MM/YYYY");
-                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/HR');
-                    return [4 /*yield*/, web.lists.getById('986680CE-5D69-47B4-947C-3998DDC3776C').items
-                            .select("Id,Title,ContractChanged,ContractId,ContractSigned,endDate,PersonnelNumber,contractNumber,typeOfContract,HolidayEntitlement,WorkingHours,GrossSalary,HHHHStaff/Title,HHHHStaff/FullName,HHHHStaff/Id,startDate,Attachments,Title,Created,Modified,typeOfContract,Editor/Name,Editor/Title,EmployeeID/Id,EmployeeID/Title,EmployeeID/Name,Author/Id,Author/Title,Author/Name,HHHHContactId").expand("Editor,Author,HHHHStaff,EmployeeID").top(4999).orderBy("Created", false)
+                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
+                    return [4 /*yield*/, web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items
+                            .select("Id,Title,ContractChanged,ContractId,ContractSigned,endDate,PersonnelNumber,contractNumber,typeOfContract,HolidayEntitlement,WorkingHours,GrossSalary,HHHHStaff/Title,HHHHStaff/FullName,HHHHStaff/Id,startDate,Title,Created,Modified,typeOfContract,EmployeeID/Id,EmployeeID/Title,EmployeeID/Name").expand("HHHHStaff,EmployeeID").top(4999).orderBy("Created", false)
                             .get().then(function (Data) {
                             Data.map(function (item, index) {
                                 // item["HHHHStaffTitle"]=item.HHHHStaff.Title;

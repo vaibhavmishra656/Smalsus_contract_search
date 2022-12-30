@@ -61,8 +61,8 @@ const CreateContract=(prop:any)=>{
           });
          }
         const loadContactDetails=async()=>{
-          const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/HR');
-          await web.lists.getById('a7b80424-e5e1-47c6-80a1-0ee44a70f92c').items.select("Id,Title,ItemType,FirstName,FullName,Company,JobTitle,Item_x0020_Cover,EmployeeID/Title,StaffID,EmployeeID/Id").expand("EmployeeID").orderBy("Created",true).get()
+          const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
+          await web.lists.getById('69e59417-fa02-4431-9d7d-100560cf3aff').items.select("Id,Title,ItemType,FirstName,FullName,Company,JobTitle,Item_x0020_Cover,EmployeeID/Title,StaffID,EmployeeID/Id").expand("EmployeeID").orderBy("Created",true).get()
           .then((Data: any[])=>{
             console.log(Data);
             var employecopyData:any=[];
@@ -125,8 +125,8 @@ const CreateContract=(prop:any)=>{
           console.log("contractType Id:",contractTypeId);
           console.log("contractType Id:",contractTypeItem);
           if(contractTypeItem!=undefined&& contractTypeItem!=""){
-            const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/HR');
-            await web.lists.getById('986680CE-5D69-47B4-947C-3998DDC3776C').items.select("Id,contractNumber,Title,ContractId,typeOfContract").filter("typeOfContract eq'"+contractTypeItem+ "'").orderBy("Created",false).top(1).get()
+            const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
+            await web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items.select("Id,contractNumber,Title,ContractId,typeOfContract").filter("typeOfContract eq'"+contractTypeItem+ "'").orderBy("Created",false).top(1).get()
             .then((Data: any[])=>{
               
               var contractNumberlength:any;
@@ -181,9 +181,9 @@ const CreateContract=(prop:any)=>{
           
              if(Titlecontract!=""&&Titlecontract!=undefined&&ContactDetailsItem!=undefined&&ContactDetailsItem!=""&&contractTypeItem!=""&&contractTypeItem!=undefined){
              const web = new Web(
-            "https://hhhhteams.sharepoint.com/sites/HHHH/HR"
+            "https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus"
            );
-           await web.lists.getById("986680CE-5D69-47B4-947C-3998DDC3776C").items.add(
+           await web.lists.getById("e183a16b-edd1-4962-99ed-f2d36d2a4816").items.add(
                   {
                    Title:Titlecontract,
                   //  Type_OfContractID:contractTypeId,
@@ -207,6 +207,10 @@ const CreateContract=(prop:any)=>{
               alert("please Fill All the input field");
             }
         };
+
+
+    
+
 
       
         return(

@@ -25,12 +25,13 @@ const ContractData = () => {
 
   }, [])
 
-  const loadEmployeesDetails = async () => {
+  const loadEmployeesDetails = async () =>
+{
     var date = new Date();
     var currentdate = moment(date).format("DD/MM/YYYY");
-    const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/HR');
-    await web.lists.getById('986680CE-5D69-47B4-947C-3998DDC3776C').items
-      .select("Id,Title,ContractChanged,ContractId,ContractSigned,endDate,PersonnelNumber,contractNumber,typeOfContract,HolidayEntitlement,WorkingHours,GrossSalary,HHHHStaff/Title,HHHHStaff/FullName,HHHHStaff/Id,startDate,Attachments,Title,Created,Modified,typeOfContract,Editor/Name,Editor/Title,EmployeeID/Id,EmployeeID/Title,EmployeeID/Name,Author/Id,Author/Title,Author/Name,HHHHContactId").expand("Editor,Author,HHHHStaff,EmployeeID").top(4999).orderBy("Created", false)
+    const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
+    await web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items
+      .select("Id,Title,ContractChanged,ContractId,ContractSigned,endDate,PersonnelNumber,contractNumber,typeOfContract,HolidayEntitlement,WorkingHours,GrossSalary,HHHHStaff/Title,HHHHStaff/FullName,HHHHStaff/Id,startDate,Title,Created,Modified,typeOfContract,EmployeeID/Id,EmployeeID/Title,EmployeeID/Name").expand("HHHHStaff,EmployeeID").top(4999).orderBy("Created", false)
       .get().then((Data: any[]) => {
 
         Data.map((item: any, index: number) => {
@@ -40,7 +41,7 @@ const ContractData = () => {
             try {
               item.HHHHStaffTitle = item.HHHHStaff.FullName != undefined ? item.HHHHStaff.FullName : '';
             } catch (error) {
-              console.log(error)
+              console.log(error)  
             }
           };
           if (item.startDate != null || item.startDate != undefined) {
