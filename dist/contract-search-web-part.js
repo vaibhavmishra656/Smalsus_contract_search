@@ -37227,6 +37227,8 @@ var CreateContract = function (prop) {
     var _l = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""), contractTypeSuffix = _l[0], setcontractTypeSuffix = _l[1];
     var _m = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]), smarttaxonomy = _m[0], setSmarttaxonomy = _m[1];
     var _o = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]), ContactsDetails = _o[0], setContactsDetails = _o[1];
+    var _p = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false), search = _p[0], setsearch = _p[1];
+    var _q = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]), employeedataa = _q[0], setemployeedataa = _q[1];
     var handleClose = function () {
         prop.callback();
         setShow(false);
@@ -37248,8 +37250,8 @@ var CreateContract = function (prop) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/HR');
-                    return [4 /*yield*/, web.lists.getById("63CAE346-409E-4457-B996-85A788074BCE").items.select("Id,Title,TaxType,Suffix").get()
+                    web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH');
+                    return [4 /*yield*/, web.lists.getById("D1C6D7C3-F36E-4F95-8715-8DA9F33622E7").items.select("Id,Title,TaxType,Suffix").filter("TaxType eq 'Contract'").get()
                             .then(function (Data) {
                             console.log("smart metadata", Data);
                             var smarttaxonomyArray = [];
@@ -37289,6 +37291,7 @@ var CreateContract = function (prop) {
                                 }
                             });
                             setContactsDetails(employecopyData);
+                            setemployeedataa(employecopyData);
                         })
                             .catch(function (err) {
                             console.log(err.message);
@@ -37299,6 +37302,8 @@ var CreateContract = function (prop) {
             }
         });
     }); };
+    // const esearch = () =>{
+    // }
     var openContractTypepopup = function (item) {
         setcontractTypepopup(true);
     };
@@ -37338,7 +37343,7 @@ var CreateContract = function (prop) {
                     console.log("contractType Id:", contractTypeItem);
                     if (!(contractTypeItem != undefined && contractTypeItem != "")) return [3 /*break*/, 2];
                     web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
-                    return [4 /*yield*/, web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items.select("Id,contractNumber,Title,ContractId,typeOfContract").filter("typeOfContract eq'" + contractTypeItem + "'").orderBy("Created", false).top(1).get()
+                    return [4 /*yield*/, web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items.select("Id,contractNumber,Title,ContractId,typeOfContractId").filter("typeOfContractId eq'" + contractTypeId + "'").orderBy("Created", false).top(1).get()
                             .then(function (Data) {
                             var contractNumberlength;
                             console.log("contract list data ", Data);
@@ -37391,8 +37396,8 @@ var CreateContract = function (prop) {
                     web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]("https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus");
                     return [4 /*yield*/, web.lists.getById("e183a16b-edd1-4962-99ed-f2d36d2a4816").items.add({
                             Title: Titlecontract,
-                            //  Type_OfContractID:contractTypeId,
-                            typeOfContract: contractTypeItem,
+                            typeOfContractId: contractTypeId,
+                            //  typeOfContract:contractTypeItem,
                             HHHHStaffId: contactDetailsId,
                             contractNumber: contractNumber,
                             ContractId: contractId
@@ -37414,6 +37419,18 @@ var CreateContract = function (prop) {
             }
         });
     }); };
+    var searchcontact = function (e) {
+        var key = e.target.value;
+        if (key.length > 0) {
+            setsearch(true);
+            var filterAll = ContactsDetails.filter(function (items) { var _a; return (_a = items.FullName) === null || _a === void 0 ? void 0 : _a.toLowerCase().includes(key); });
+            setContactsDetails(filterAll);
+        }
+        else if (key.length == 0) {
+            setsearch(false);
+            setContactsDetails(employeedataa);
+        }
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "modal show", style: { display: 'block', position: 'initial' } },
         react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], { show: show, onHide: handleClose, size: "lg", "aria-labelledby": "contained-modal-title-vcenter" },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Header, null,
@@ -37457,16 +37474,19 @@ var CreateContract = function (prop) {
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], { variant: "primary", onClick: function () { return saveContractType(checkContractitem, "contract"); } }, "save"),
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], { variant: "secondary", onClick: function () { return poupcloseContractType("contract"); } }, "Cancel"))),
         react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], { show: ContactDetailspopup, onHide: function () { return poupcloseContractType("contact"); }, size: "lg", "aria-labelledby": "contained-modal-title-vcenter" },
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Header, { closeButton: true },
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Title, null, "Contacts")),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Header, null,
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Title, null, "Contacts"),
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { role: "Button", onClick: handleClose }, "\u2715")),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Body, null,
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'bodypoup col-sm-12 row' }, ContactsDetails.map(function (item, index) {
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null,
+                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", { type: "text", className: "main-search", placeholder: " Search All", onChange: function (e) { return searchcontact(e); } })),
+                search ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'bodypoup col-sm-12 row' }, ContactsDetails.map(function (item, index) {
                     return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "radio col-sm-4" },
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { key: index },
                             " ",
                             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", { type: "radio", id: "html", name: "fav_language", defaultChecked: checkContactitem == item.FullName, value: item.FullName, onChange: function (e) { return setcheckContactitem(e.target.value); } }),
                             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", null, item.FullName))));
-                }))),
+                })) : null),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__["default"].Footer, null,
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], { variant: "primary", onClick: function () { return saveContractType(checkContactitem, "contact"); } }, "save"),
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], { variant: "secondary", onClick: function () { return poupcloseContractType("contact"); } }, "Cancel")))));
@@ -38246,8 +38266,9 @@ var ContractData = function () {
                     currentdate = moment__WEBPACK_IMPORTED_MODULE_5__(date).format("DD/MM/YYYY");
                     web = new sp_pnp_js__WEBPACK_IMPORTED_MODULE_3__["Web"]('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
                     return [4 /*yield*/, web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items
-                            .select("Id,Title,ContractChanged,ContractId,ContractSigned,endDate,PersonnelNumber,contractNumber,typeOfContract,HolidayEntitlement,WorkingHours,GrossSalary,HHHHStaff/Title,HHHHStaff/FullName,HHHHStaff/Id,startDate,Title,Created,Modified,typeOfContract,EmployeeID/Id,EmployeeID/Title,EmployeeID/Name").expand("HHHHStaff,EmployeeID").top(4999).orderBy("Created", false)
+                            .select("Id,Title,ContractChanged,ContractId,ContractSigned,endDate,PersonnelNumber,contractNumber,HolidayEntitlement,WorkingHours,GrossSalary,HHHHStaff/Title,HHHHStaff/FullName,HHHHStaff/Id,startDate,Title,Created,Modified,EmployeeID/Id,EmployeeID/Title,EmployeeID/Name").expand("HHHHStaff,EmployeeID").top(4999).orderBy("Created", false)
                             .get().then(function (Data) {
+                            console.log(Data);
                             Data.map(function (item, index) {
                                 // item["HHHHStaffTitle"]=item.HHHHStaff.Title;
                                 // console.log(item);
@@ -38479,7 +38500,7 @@ var ContractData = function () {
                     return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("tr", { key: index },
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("td", null, item.ContractId),
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("td", { className: 'full-name' },
-                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://hhhhteams.sharepoint.com/sites/HHHH/HR/SitePages/Contract-Profile-SPFx.aspx?SmartID=".concat(item.Id), target: "_blank" }, item.Title)),
+                            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus/SitePages/Contract-Profile-SPFx.aspx?SmartID=".concat(item.Id), target: "_blank" }, item.Title)),
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("td", { className: 'full-name' }, item.HHHHStaffTitle),
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("td", null, item.typeOfContract),
                         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("td", null, item.startDate != null ? moment__WEBPACK_IMPORTED_MODULE_5__(item.startDate).format("DD/MM/YYYY") : ""),

@@ -31,9 +31,9 @@ const ContractData = () => {
     var currentdate = moment(date).format("DD/MM/YYYY");
     const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
     await web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items
-      .select("Id,Title,ContractChanged,ContractId,ContractSigned,endDate,PersonnelNumber,contractNumber,typeOfContract,HolidayEntitlement,WorkingHours,GrossSalary,HHHHStaff/Title,HHHHStaff/FullName,HHHHStaff/Id,startDate,Title,Created,Modified,typeOfContract,EmployeeID/Id,EmployeeID/Title,EmployeeID/Name").expand("HHHHStaff,EmployeeID").top(4999).orderBy("Created", false)
+      .select("Id,Title,ContractChanged,ContractId,ContractSigned,endDate,PersonnelNumber,contractNumber,HolidayEntitlement,WorkingHours,GrossSalary,HHHHStaff/Title,HHHHStaff/FullName,HHHHStaff/Id,startDate,Title,Created,Modified,EmployeeID/Id,EmployeeID/Title,EmployeeID/Name").expand("HHHHStaff,EmployeeID").top(4999).orderBy("Created", false)
       .get().then((Data: any[]) => {
-
+console.log(Data);
         Data.map((item: any, index: number) => {
           // item["HHHHStaffTitle"]=item.HHHHStaff.Title;
           // console.log(item);
@@ -266,7 +266,7 @@ const ContractData = () => {
               return (
                 <tr key={index}>
                   <td>{item.ContractId}</td>
-                  <td className='full-name'><a href={`https://hhhhteams.sharepoint.com/sites/HHHH/HR/SitePages/Contract-Profile-SPFx.aspx?SmartID=${item.Id}`} target="_blank">{item.Title}</a></td>
+                  <td className='full-name'><a href={`https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus/SitePages/Contract-Profile-SPFx.aspx?SmartID=${item.Id}`} target="_blank">{item.Title}</a></td>
                   <td className='full-name'>{item.HHHHStaffTitle}</td>
                   <td>{item.typeOfContract}</td>
                   <td>{item.startDate != null ? moment(item.startDate).format("DD/MM/YYYY") : ""}</td>

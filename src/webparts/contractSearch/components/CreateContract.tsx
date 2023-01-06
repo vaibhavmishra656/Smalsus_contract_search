@@ -19,6 +19,10 @@ const CreateContract=(prop:any)=>{
     const [contractTypeSuffix, setcontractTypeSuffix] = useState("");
     const [smarttaxonomy, setSmarttaxonomy] = useState([]);
     const[ContactsDetails,setContactsDetails]=useState([]);
+    const[search,setsearch]:any=useState(false);
+    const[employeedataa,setemployeedataa]=useState([])
+
+
 
     const handleClose = () =>{
       prop.callback();
@@ -39,8 +43,8 @@ const CreateContract=(prop:any)=>{
       loadContactDetails();
           },[])
     const LoadSmartTaxonomy=async()=>{
-      const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/HR');
-       await web.lists.getById("63CAE346-409E-4457-B996-85A788074BCE").items.select("Id,Title,TaxType,Suffix").get()
+      const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH');
+       await web.lists.getById("D1C6D7C3-F36E-4F95-8715-8DA9F33622E7").items.select("Id,Title,TaxType,Suffix").filter("TaxType eq 'Contract'").get()
        .then((Data: any[])=>{
          console.log("smart metadata",Data);
          let smarttaxonomyArray:any=[];
@@ -74,13 +78,18 @@ const CreateContract=(prop:any)=>{
               }
             })
             setContactsDetails(employecopyData);
+            setemployeedataa(employecopyData);
        
             }) 
           .catch((err) => {
                 console.log(err.message);
              });
         }
-      
+
+        // const esearch = () =>{
+
+
+        // }
       
         const openContractTypepopup=(item:any)=>{
           setcontractTypepopup(true);
@@ -126,7 +135,7 @@ const CreateContract=(prop:any)=>{
           console.log("contractType Id:",contractTypeItem);
           if(contractTypeItem!=undefined&& contractTypeItem!=""){
             const web = new Web('https://hhhhteams.sharepoint.com/sites/HHHH/Smalsus');
-            await web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items.select("Id,contractNumber,Title,ContractId,typeOfContract").filter("typeOfContract eq'"+contractTypeItem+ "'").orderBy("Created",false).top(1).get()
+            await web.lists.getById('e183a16b-edd1-4962-99ed-f2d36d2a4816').items.select("Id,contractNumber,Title,ContractId,typeOfContractId").filter("typeOfContractId eq'"+contractTypeId+ "'").orderBy("Created",false).top(1).get()
             .then((Data: any[])=>{
               
               var contractNumberlength:any;
@@ -186,8 +195,8 @@ const CreateContract=(prop:any)=>{
            await web.lists.getById("e183a16b-edd1-4962-99ed-f2d36d2a4816").items.add(
                   {
                    Title:Titlecontract,
-                  //  Type_OfContractID:contractTypeId,
-                   typeOfContract:contractTypeItem,
+                   typeOfContractId:contractTypeId,
+                  //  typeOfContract:contractTypeItem,
                    HHHHStaffId:contactDetailsId,
                    contractNumber:contractNumber,
                    ContractId:contractId
@@ -207,6 +216,24 @@ const CreateContract=(prop:any)=>{
               alert("please Fill All the input field");
             }
         };
+
+        const searchcontact = (e:any)=>{
+
+          var key=e.target.value;
+          if(key.length>0)
+          {
+            setsearch(true);
+            const filterAll: any = ContactsDetails.filter((items: any) =>
+            items.FullName?.toLowerCase().includes(key)
+          )
+          setContactsDetails(filterAll)
+          }
+          else if (key.length==0){
+            setsearch(false)
+            setContactsDetails(employeedataa);
+          }
+
+        }
 
 
     
@@ -307,24 +334,31 @@ const CreateContract=(prop:any)=>{
 
 
               <Modal show={ContactDetailspopup} onHide={()=>poupcloseContractType("contact")} size="lg"aria-labelledby="contained-modal-title-vcenter">
-        <Modal.Header closeButton>
+        <Modal.Header>
+       
           <Modal.Title>Contacts</Modal.Title>
-        </Modal.Header>
+          <div role={"Button"} onClick={handleClose} >&#x2715;</div>
+          </Modal.Header>
         <Modal.Body>
+
+        <>
+          <input type="text" className="main-search" placeholder=" Search All"  onChange={(e)=>searchcontact(e)}/>
+
+          </>
+         {search? <div className='bodypoup col-sm-12 row'>
           
-          <div className='bodypoup col-sm-12 row'>
-          
-         {
-        ContactsDetails.map((item,index)=>{
-           return(
-           <div className="radio col-sm-4">
-            <div key={index} > <input type="radio" id="html" name="fav_language"  defaultChecked={checkContactitem==item.FullName} value={item.FullName}onChange={(e)=>setcheckContactitem(e.target.value)}></input>
-            <label >{item.FullName}</label></div>
-               </div>
-          )
-        })  
-        }
-         </div>
+          {
+         ContactsDetails.map((item,index)=>{
+            return(
+            <div className="radio col-sm-4">
+             <div key={index} > <input type="radio" id="html" name="fav_language"  defaultChecked={checkContactitem==item.FullName} value={item.FullName}onChange={(e)=>setcheckContactitem(e.target.value)}></input>
+             <label >{item.FullName}</label></div>
+                </div>
+           )
+         })  
+         }
+          </div>:null} 
+         
      </Modal.Body>
         <Modal.Footer>
       
