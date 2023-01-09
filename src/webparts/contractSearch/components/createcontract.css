@@ -163,23 +163,38 @@ background-color: #000066;
     width: 1850px!important;
 }
 
+.btmbtn{
+    margin-right: 10px;
+}
+
+.buttons{
+    margin-top: 50px;
+}
+
+
 span.toltrippopup {
     position: absolute;
-    top: 41%;
-    right: 35%;
+    top: 79px;
     width: 36px;
     height: 37px;
     line-height: 29px;
     text-align: center;
-    background: #000066;
+    background: #006;
+    right: 188px;
 }
 span.toltrippopup-2 {
     position: absolute;
-    top: 41%;
-    right: 2%;
+    top: 79.8px;
+    right: 24px;
     width: 36px;
     height: 37px;
     line-height: 29px;
     text-align: center;
     background: #006;
 }
+
+.main-124 {
+    width: 25%;
+}
+
+

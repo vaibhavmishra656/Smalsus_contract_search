@@ -3,9 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './createcontact.css'
 import { useState,useEffect } from "react";
 import {Web} from "sp-pnp-js";
+import {Panel } from "office-ui-fabric-react";
+// import { Dialog, DialogSurface, DialogTitle, DialogBody, DialogActions, DialogContent } from "@fluentui/react-components";
 import Modal from 'react-bootstrap/Modal';
 import { Col,Form,Row,Button } from "react-bootstrap";
-const CreateContract=(prop:any)=>{
+const CreateContract=(prop:any)=>{  
     const [show, setShow] = useState(prop.prop);
     const [contractTypepopup, setcontractTypepopup] = useState(false);
     const [ContactDetailspopup, setContactDetailspopup] = useState(false);
@@ -243,7 +245,7 @@ const CreateContract=(prop:any)=>{
         return(
          <div  className="modal show"
          style={{ display: 'block', position: 'initial' }}>
-       <Modal show={show} onHide={handleClose} size="lg"aria-labelledby="contained-modal-title-vcenter">
+       {/* <Modal show={show} onHide={handleClose} size="lg"aria-labelledby="contained-modal-title-vcenter">
         <Modal.Header >
           <Modal.Title>Create Contract</Modal.Title>
         <span onClick={handleClose} >x</span>
@@ -292,7 +294,115 @@ const CreateContract=(prop:any)=>{
           </Button>
         
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
+
+      {/* <Panel >
+      <Dialog>
+      <DialogSurface>
+        <DialogBody>
+          <DialogTitle>Create Contract</DialogTitle>
+          <span onClick={handleClose} >x</span>
+          <DialogContent>
+          <Form>
+          <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Title</Form.Label>
+          <input type="text" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"onChange={(e)=>setTitlecontract(e.target.value)}></input>
+        </Form.Group>
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Employee Name</Form.Label>
+          <div> <input type="text" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"value={ContactDetailsItem}></input>
+          <span className="toltrippopup">
+        <img  onClick={openEmployeeDetailspopup} src="https://hhhhteams.sharepoint.com/sites/HHHH/SiteCollectionImages/ICONS/Foundation/EMMCopyTerm.png" data-themekey="#"/>
+         </span>
+         </div>
+         
+         
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Contract Type</Form.Label>
+          <div>
+          <input type="text" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"value={contractTypeItem}></input>
+          <span className="toltrippopup-2" >
+            <img  onClick={()=>openContractTypepopup(contractTypeItem)} src="https://hhhhteams.sharepoint.com/sites/HHHH/SiteCollectionImages/ICONS/Foundation/EMMCopyTerm.png" data-themekey="#"/>
+            </span>
+          </div>
+         
+   
+        </Form.Group>
+      </Row>
+    </Form>
+          </DialogContent>
+          <DialogActions>
+           <Button variant="primary" onClick={handleClose}>
+           Add New Employee
+          </Button>
+          <Button variant="primary" onClick={createnewcontract}>
+         Create
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          </DialogActions>
+        </DialogBody>
+      </DialogSurface>
+    </Dialog>
+    </Panel> */}
+
+    <Panel 
+            headerText="Create Contract" 
+            isOpen={show} 
+            onDismiss={handleClose}
+            isFooterAtBottom={true}
+           
+        >
+          <>
+          <Form>
+          <Row className="mb-6 ms-Panel--lg">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Title</Form.Label>
+          <input type="text" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" onChange={(e)=>setTitlecontract(e.target.value)}></input>
+        </Form.Group>
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Employee Name</Form.Label>
+          <div> 
+            <input type="text"  className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"value={ContactDetailsItem}></input>
+          <span className="toltrippopup">
+        <img  onClick={openEmployeeDetailspopup} src="https://hhhhteams.sharepoint.com/sites/HHHH/SiteCollectionImages/ICONS/Foundation/EMMCopyTerm.png" data-themekey="#"/>
+         </span>
+         </div>
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Contract Type</Form.Label>
+          <div>
+          <input type="text" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"value={contractTypeItem}></input>
+          <span className="toltrippopup-2">
+            <img  onClick={()=>openContractTypepopup(contractTypeItem)} src="https://hhhhteams.sharepoint.com/sites/HHHH/SiteCollectionImages/ICONS/Foundation/EMMCopyTerm.png" data-themekey="#"/>
+            </span>
+          </div>
+         
+   
+        </Form.Group>
+      </Row>
+    </Form>
+    </>
+
+      <div className="buttons">
+           <Button className="btmbtn" variant="primary" onClick={handleClose}>
+           Add New Employee
+          </Button>
+          <Button variant="primary" className="btmbtn" onClick={createnewcontract}>
+         Create
+          </Button>
+          <Button variant="secondary" className="btmbtn" onClick={handleClose}>
+            Close
+          </Button>
+      </div>          
+        </Panel>
+
+
 
 
 
