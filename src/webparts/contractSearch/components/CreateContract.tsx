@@ -5,8 +5,8 @@ import { useState,useEffect } from "react";
 import {Web} from "sp-pnp-js";
 import {Panel } from "office-ui-fabric-react";
 // import { Dialog, DialogSurface, DialogTitle, DialogBody, DialogActions, DialogContent } from "@fluentui/react-components";
-import Modal from 'react-bootstrap/Modal';
-import { Col,Form,Row,Button } from "react-bootstrap";
+//import Modal from 'react-bootstrap/Modal';
+import { Form,Row,Button } from "react-bootstrap";
 const CreateContract=(prop:any)=>{  
     const [show, setShow] = useState(prop.prop);
     const [contractTypepopup, setcontractTypepopup] = useState(false);
@@ -245,6 +245,8 @@ const CreateContract=(prop:any)=>{
         return(
          <div  className="modal show"
          style={{ display: 'block', position: 'initial' }}>
+
+          
        {/* <Modal show={show} onHide={handleClose} size="lg"aria-labelledby="contained-modal-title-vcenter">
         <Modal.Header >
           <Modal.Title>Create Contract</Modal.Title>
@@ -359,25 +361,26 @@ const CreateContract=(prop:any)=>{
         >
           <>
           <Form>
-          <Row className="mb-6 ms-Panel--lg">
-        <Form.Group as={Col} controlId="formGridCity">
+          <Row className=" ms-Panel--lg">
+        <Form.Group >
           <Form.Label>Title</Form.Label>
-          <input type="text" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" onChange={(e)=>setTitlecontract(e.target.value)}></input>
+          <input type="text" className="space form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" onChange={(e)=>setTitlecontract(e.target.value)}></input>
         </Form.Group>
-        <Form.Group as={Col} controlId="formGridCity">
+
+        <Form.Group >
           <Form.Label>Employee Name</Form.Label>
-          <div> 
-            <input type="text"  className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"value={ContactDetailsItem}></input>
+          <div>
+            <input type="text"  className="space form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"value={ContactDetailsItem}></input>
           <span className="toltrippopup">
         <img  onClick={openEmployeeDetailspopup} src="https://hhhhteams.sharepoint.com/sites/HHHH/SiteCollectionImages/ICONS/Foundation/EMMCopyTerm.png" data-themekey="#"/>
          </span>
          </div>
         </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridCity">
+        <Form.Group >
           <Form.Label>Contract Type</Form.Label>
           <div>
-          <input type="text" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"value={contractTypeItem}></input>
+          <input type="text" className="space form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"value={contractTypeItem}></input>
           <span className="toltrippopup-2">
             <img  onClick={()=>openContractTypepopup(contractTypeItem)} src="https://hhhhteams.sharepoint.com/sites/HHHH/SiteCollectionImages/ICONS/Foundation/EMMCopyTerm.png" data-themekey="#"/>
             </span>
@@ -409,7 +412,7 @@ const CreateContract=(prop:any)=>{
                 {/* =========================contract type poup open===================  */}
 
 
-        <Modal show={contractTypepopup} onHide={()=>poupcloseContractType("contract")} size="lg"aria-labelledby="contained-modal-title-vcenter">
+        {/* <Modal show={contractTypepopup} onHide={()=>poupcloseContractType("contract")} size="lg"aria-labelledby="contained-modal-title-vcenter">
         <Modal.Header closeButton>
           <Modal.Title>Contract Type</Modal.Title>
         </Modal.Header>
@@ -438,12 +441,45 @@ const CreateContract=(prop:any)=>{
           </Button>
         
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
+
+
+
+      <Panel 
+            headerText="Contract Type" 
+            isOpen={contractTypepopup}
+            onDismiss={()=>poupcloseContractType("contract")}
+            isFooterAtBottom={true}
+            
+           
+        >       
+        <div className='bodypoup col-sm-12 row'>
+         {
+        smarttaxonomy.map((item,index)=>{
+           return(
+           <div className="radio col-sm-4">
+            <div key={index}> <input type="radio" id="html" name="fav_language"  defaultChecked={checkContractitem==item.Title} value={item.Title}onChange={(e)=>setcheckContractitem(e.target.value)}></input>
+            <label >{item.Title}</label></div>
+               </div>
+          )
+        })  
+        }
+         </div>
+
+         <div>
+         <Button variant="primary" onClick={()=>saveContractType(checkContractitem,"contract")}>
+             save
+          </Button>
+          <Button variant="secondary" onClick={()=>poupcloseContractType("contract")}>
+            Cancel
+          </Button>
+         </div>
+        </Panel>
               
               {/* ===============employedetails poup========================== */}
 
 
-              <Modal show={ContactDetailspopup} onHide={()=>poupcloseContractType("contact")} size="lg"aria-labelledby="contained-modal-title-vcenter">
+              {/* <Modal show={ContactDetailspopup} onHide={()=>poupcloseContractType("contact")} size="lg"aria-labelledby="contained-modal-title-vcenter">
         <Modal.Header>
        
           <Modal.Title>Contacts</Modal.Title>
@@ -480,7 +516,43 @@ const CreateContract=(prop:any)=>{
           </Button>
         
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
+
+
+      <Panel 
+            headerText="Contacts" 
+            isOpen={ContactDetailspopup} 
+            onDismiss={()=>poupcloseContractType("contact")}
+            isFooterAtBottom={true}         
+        >
+           <>
+          <input type="text" className="main-search" placeholder=" Search All"  onChange={(e)=>searchcontact(e)}/>
+
+          </>
+         {search? <div className='bodypoup col-sm-12 row'>
+          
+          {
+         ContactsDetails.map((item,index)=>{
+            return(
+            <div className="radio col-sm-4">
+             <div key={index}> 
+             <input type="radio" id="html" name="fav_language"  defaultChecked={checkContactitem==item.FullName} value={item.FullName}onChange={(e)=>setcheckContactitem(e.target.value)}></input>
+             <label >{item.FullName}</label></div>
+                </div>
+           )
+         })  
+         }
+          </div>:null}
+          <div>
+              <Button variant="primary" onClick={()=>saveContractType(checkContactitem,"contact")}>
+             save
+          </Button>
+          <Button variant="secondary" onClick={()=>poupcloseContractType("contact")}>
+            Cancel
+          </Button>
+          </div>
+
+        </Panel>
 
 </div>
 )

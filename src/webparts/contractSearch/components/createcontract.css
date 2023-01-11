@@ -174,27 +174,35 @@ background-color: #000066;
 
 span.toltrippopup {
     position: absolute;
-    top: 79px;
+    top: 146px;
     width: 36px;
     height: 37px;
-    line-height: 29px;
+    line-height: 36px;
     text-align: center;
     background: #006;
-    right: 188px;
+    right: 24px;
 }
 span.toltrippopup-2 {
     position: absolute;
-    top: 79.8px;
-    right: 24px;
+    top: 213.8px;
+    right: 23px;
     width: 36px;
     height: 37px;
-    line-height: 29px;
+    line-height: 36px;
     text-align: center;
     background: #006;
 }
 
+.space{
+    width: 100%;
+}
+
 .main-124 {
     width: 25%;
+}
+
+.main-144 {
+    width: 511px;
 }
 
 
