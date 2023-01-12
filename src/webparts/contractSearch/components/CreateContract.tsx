@@ -7,6 +7,8 @@ import {Panel } from "office-ui-fabric-react";
 // import { Dialog, DialogSurface, DialogTitle, DialogBody, DialogActions, DialogContent } from "@fluentui/react-components";
 //import Modal from 'react-bootstrap/Modal';
 import { Form,Row,Button } from "react-bootstrap";
+
+var name ="vaibhav";
 const CreateContract=(prop:any)=>{  
     const [show, setShow] = useState(prop.prop);
     const [contractTypepopup, setcontractTypepopup] = useState(false);
@@ -31,6 +33,7 @@ const CreateContract=(prop:any)=>{
      setShow(false);
        } 
     
+       
        const poupcloseContractType=(item:any)=>{
         if(item=="contract"){
           setcontractTypepopup(false);
@@ -88,16 +91,14 @@ const CreateContract=(prop:any)=>{
              });
         }
 
-        // const esearch = () =>{
 
-
-        // }
       
         const openContractTypepopup=(item:any)=>{
           setcontractTypepopup(true);
        }
        const openEmployeeDetailspopup=()=>{
         setContactDetailspopup(true); 
+        
        }
        
        const saveContractType=(checkitem:any,type:any)=>{
@@ -224,8 +225,8 @@ const CreateContract=(prop:any)=>{
           var key=e.target.value;
           if(key.length>0)
           {
-            setsearch(true);
-            const filterAll: any = ContactsDetails.filter((items: any) =>
+           setsearch(true);
+            const filterAll: any = employeedataa.filter((items: any) =>
             items.FullName?.toLowerCase().includes(key)
           )
           setContactsDetails(filterAll)
@@ -354,10 +355,11 @@ const CreateContract=(prop:any)=>{
 
     <Panel 
             headerText="Create Contract" 
+            
             isOpen={show} 
             onDismiss={handleClose}
             isFooterAtBottom={true}
-           
+            isBlocking={!contractTypepopup && !ContactDetailspopup }
         >
           <>
           <Form>
@@ -466,11 +468,11 @@ const CreateContract=(prop:any)=>{
         }
          </div>
 
-         <div>
-         <Button variant="primary" onClick={()=>saveContractType(checkContractitem,"contract")}>
+         <div className="buttons">
+         <Button variant="primary" className="btmbtn" onClick={()=>saveContractType(checkContractitem,"contract")}>
              save
           </Button>
-          <Button variant="secondary" onClick={()=>poupcloseContractType("contract")}>
+          <Button variant="secondary" className="btmbtn" onClick={()=>poupcloseContractType("contract")}>
             Cancel
           </Button>
          </div>
@@ -518,12 +520,14 @@ const CreateContract=(prop:any)=>{
         </Modal.Footer>
       </Modal> */}
 
-
-      <Panel 
-            headerText="Contacts" 
+     
+      <Panel  
+            headerText={`Contacts ${name}`}
+            
             isOpen={ContactDetailspopup} 
             onDismiss={()=>poupcloseContractType("contact")}
-            isFooterAtBottom={true}         
+            
+            // isFooterAtBottom={true}         
         >
            <>
           <input type="text" className="main-search" placeholder=" Search All"  onChange={(e)=>searchcontact(e)}/>
@@ -535,19 +539,18 @@ const CreateContract=(prop:any)=>{
          ContactsDetails.map((item,index)=>{
             return(
             <div className="radio col-sm-4">
-             <div key={index}> 
-             <input type="radio" id="html" name="fav_language"  defaultChecked={checkContactitem==item.FullName} value={item.FullName}onChange={(e)=>setcheckContactitem(e.target.value)}></input>
+             <div key={index} > <input type="radio" id="html" name="fav_language"  defaultChecked={checkContactitem==item.FullName} value={item.FullName}onChange={(e)=>setcheckContactitem(e.target.value)}></input>
              <label >{item.FullName}</label></div>
                 </div>
            )
          })  
          }
           </div>:null}
-          <div>
-              <Button variant="primary" onClick={()=>saveContractType(checkContactitem,"contact")}>
+          <div className="buttons">
+              <Button variant="primary" className="btmbtn" onClick={()=>saveContractType(checkContactitem,"contact")}>
              save
           </Button>
-          <Button variant="secondary" onClick={()=>poupcloseContractType("contact")}>
+          <Button variant="secondary" className="btmbtn" onClick={()=>poupcloseContractType("contact")}>
             Cancel
           </Button>
           </div>
