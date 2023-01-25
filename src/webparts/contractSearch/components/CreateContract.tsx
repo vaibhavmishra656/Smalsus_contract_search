@@ -8,7 +8,7 @@ import {Panel } from "office-ui-fabric-react";
 //import Modal from 'react-bootstrap/Modal';
 import { Form,Row,Button } from "react-bootstrap";
 
-var name ="vaibhav";
+// var name ="vaibhav";
 const CreateContract=(prop:any)=>{  
     const [show, setShow] = useState(prop.prop);
     const [contractTypepopup, setcontractTypepopup] = useState(false);
@@ -33,7 +33,7 @@ const CreateContract=(prop:any)=>{
      setShow(false);
        } 
     
-       
+
        const poupcloseContractType=(item:any)=>{
         if(item=="contract"){
           setcontractTypepopup(false);
@@ -460,8 +460,11 @@ const CreateContract=(prop:any)=>{
         smarttaxonomy.map((item,index)=>{
            return(
            <div className="radio col-sm-4">
+            <label>
             <div key={index}> <input type="radio" id="html" name="fav_language"  defaultChecked={checkContractitem==item.Title} value={item.Title}onChange={(e)=>setcheckContractitem(e.target.value)}></input>
+            
             <label >{item.Title}</label></div>
+            </label>
                </div>
           )
         })  
@@ -522,7 +525,9 @@ const CreateContract=(prop:any)=>{
 
      
       <Panel  
-            headerText={`Contacts ${name}`}
+            // headerText={`Contacts ${name}`}
+
+            headerText="Contacts"
             
             isOpen={ContactDetailspopup} 
             onDismiss={()=>poupcloseContractType("contact")}
